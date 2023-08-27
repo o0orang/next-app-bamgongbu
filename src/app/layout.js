@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import './globals.css'
+import { Control } from './Control';
 
 
 export const metadata = {
@@ -8,7 +9,6 @@ export const metadata = {
 }
 
 export default async function RootLayout({ children }) {
-  console.log('run layout')
   const resp = await fetch('http://localhost:9999/topics', {
     cache: 'no-store'
   });
@@ -25,13 +25,10 @@ export default async function RootLayout({ children }) {
             })}
           </ol>
             {children}
-          <ul>
-            <li><Link href="/create">create</Link></li>
-            <li><Link href="/update/1">update</Link></li>
-            <li><button>delete</button></li>
-          </ul>
+          <Control />
         </div>
       </body>
     </html>
   )
 }
+
