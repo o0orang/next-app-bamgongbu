@@ -23,6 +23,8 @@ export function Control() {
   return <ul>
     <li><Link href="/create">create</Link></li>
     <li>aa</li>
+    <li>bb</li>
+    <li>cc</li>
     {contextUI}
     
   </ul>;
